@@ -1,0 +1,20 @@
+{
+  "name": "oim-oracle-to-mongodb",
+  "version": "1.0.0",
+  "description": "migrate example of oracle DB to mongo db",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pretty": "prettier --write ./**/* --ignore-unknown",
+    "prettier:watch": "onchange \"./**/*\" -- prettier --write --ignore-unknown {{changed}}"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongodb": "6.8",
+    "onchange": "^7.1.0",
+    "prettier": "^3.3.3"
+  }
+}
