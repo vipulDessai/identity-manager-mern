@@ -10,3 +10,8 @@ root-oim-mongodb / LL4S4zVVnMoGLmjp
 
 - login / authenticate
 - CRUD operations
+
+# TODO
+
+- enable cors for the UI development
+- cookie based authentication
