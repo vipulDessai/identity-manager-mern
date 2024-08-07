@@ -1,8 +1,8 @@
-const { MongoClient, ServerApiVersion } = require("mongodb");
+import { MongoClient, MongoClientOptions, ServerApiVersion } from "mongodb";
 
-const static = require("./static");
+import { staticData } from "./static";
 
-const uri = static.MONGO_DB_URI;
+const uri = staticData.MONGO_DB_URI;
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
@@ -11,7 +11,7 @@ const client = new MongoClient(uri, {
     strict: true,
     deprecationErrors: true,
   },
-});
+} as MongoClientOptions);
 
 const connectDb = async () => {
   // Connect the client to the server	(optional starting in v4.7)
@@ -24,7 +24,7 @@ const disconnectDb = async () => {
   await client.close();
 };
 
-module.exports = {
+export const connector = {
   connectDb,
   disconnectDb,
 };

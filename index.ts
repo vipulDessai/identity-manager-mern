@@ -1,14 +1,15 @@
-const express = require("express");
-const path = require("path");
+import * as express from "express";
+import { Request, Response } from "express";
+import * as path from "path";
 
-const connector = require("./src/common");
+import { connector } from "./src/common";
 
 const app = express();
 const port = 3000;
 
 app.use(express.static("client/build"));
 
-app.get("/requests", async (req, res) => {
+app.get("/requests", async (req: Request, res: Response) => {
   try {
     const client = await connector.connectDb();
     // Send a ping to confirm a successful connection
@@ -28,7 +29,7 @@ app.get("/requests", async (req, res) => {
   }
 });
 
-app.post("/requests", async (req, res) => {
+app.post("/requests", async (req: Request, res: Response) => {
   try {
     const client = await connector.connectDb();
     // Send a ping to confirm a successful connection
